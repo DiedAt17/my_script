@@ -7,7 +7,7 @@
 
 */
 
-const $ = new Env("中青看点阅读")
+const $ = new Env("中青看点阅读（清爽版）")
 //const notify = $.isNode() ? require('./sendNotify') : '';
 let ReadArr = [], timebodyVal ="";
 let YouthBody = $.getdata('youth_autoread')||$.getdata("zqgetbody_body");
@@ -116,7 +116,7 @@ function bodyInfo() {
                     ctype = bodyobj.ctype == 0 ? "阅读资讯" : "观看视频";
                     if (artArr.indexOf(acticid) == -1) {
                 artArr.unshift(acticid);
-                        $.log(ctype + ": " + artdesc + "  ----- " + author + "\n")
+                        //$.log(ctype + ": " + artdesc + "  ----- " + author + "\n")
                         await $.wait(10000);
                         await AutoRead();
                     } else if (artArr.indexOf(acticid) > -1&&!$.isNode()) {
@@ -142,7 +142,7 @@ function AutoRead() {
             let readres = JSON.parse(data);
             //$.log(JSON.stringify(readres,null,2))
             if (readres.items.complete == 1) {
-                //$.log(readres.items.max_notice)
+                $.log(readres.items.max_notice)
             } else {
                 if (readres.error_code == '0' && data.indexOf("read_score") > -1 && readres.items.read_score > 0) {
                     console.log(`本次阅读获得${readres.items.read_score}个青豆，请等待30s后执行下一次阅读\n`);
