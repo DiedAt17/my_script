@@ -7,7 +7,7 @@
 
 */
 
-const $ = new Env("中青看点阅读")
+const $ = new Env("中青看点阅读（清爽版）")
 //const notify = $.isNode() ? require('./sendNotify') : '';
 let ReadArr = [], timebodyVal ="";
 let YouthBody = $.getdata('youth_autoread')||$.getdata("zqgetbody_body");
