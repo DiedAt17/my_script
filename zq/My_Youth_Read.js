@@ -85,7 +85,7 @@ if (!$.isNode()) {
             articlebody = ReadArr[i];
             $.index = $.index + 1;
             $.log(`-------------------------\n开始中青看点第${$.index}次阅读\n`);
-            //await bodyInfo();
+            await bodyInfo();
         }
     };
     $.log("\n……………………………………………………………………\n\n本次共删除" + delbody + "个请求，剩余" + (ReadArr.length - delbody) + "个请求");
@@ -142,7 +142,7 @@ function AutoRead() {
             let readres = JSON.parse(data);
             //$.log(JSON.stringify(readres,null,2))
             if (readres.items.complete == 1) {
-                $.log(readres.items.max_notice)
+                //$.log(readres.items.max_notice)
             } else {
                 if (readres.error_code == '0' && data.indexOf("read_score") > -1 && readres.items.read_score > 0) {
                     console.log(`本次阅读获得${readres.items.read_score}个青豆，请等待30s后执行下一次阅读\n`);
