@@ -9,7 +9,7 @@
 
 const $ = new Env("中青看点阅读（读取外部）")
 //const notify = $.isNode() ? require('./sendNotify') : '';
-let youth_read = require('./read.json').YOUTH_READ;
+let youth_read = require('./zq_read.json').YOUTH_READ;
 let ReadArr = [], timebodyVal ="";
 let YouthBody = $.getdata('youth_autoread')||$.getdata("zqgetbody_body");
 let smallzq = $.getdata('youth_cut');
